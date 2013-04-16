@@ -45,7 +45,7 @@ module Net
 
       def parse(response_header)
         header = response_header['www-authenticate'].
-          gsub(/qop=(auth(?:-int)?)/, %["\\1"])
+          gsub(/qop=(auth(?:-int)?)/, %[qop="\\1"])
 
         header =~ /^(\w+) (.*)/
         params = {}
